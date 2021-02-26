@@ -1,7 +1,9 @@
 I choose three users' data for test. And we considered three types of features which includes action features, action sequence and role features.
 ---------------------------------------
+Users： 'EDB0714','TNM0961' and 'HXL0968'
+Mix: Files mixed with three types of features for the next process.
 Role_feature.csv: the average of actions features of  all users under the role of "ProductionLineWorker".
-Mix_Three_Feature_Loss: combined three users' losses and generated train and test data.
+
 ---------------------------------------
 Every user's files:
 
