@@ -89,7 +89,7 @@ if __name__ == "__main__":
     for user in user_sets:
         deviations_for_users(user)
     # ------------------------------------
-    # ------ step 2 每个用户的各种偏差度进行拼接
+    # ------ step 2 每个用户的各种偏差度进行拼接 (mix data)------
     for username in user_sets:
         user_path='Data/'+ username+'/Mix'
         path_check(user_path)
@@ -125,7 +125,7 @@ if __name__ == "__main__":
                     fileopen.writelines('1,0\n')
                 index=index+1
             fileopen.close()
-    # -------- step 4 进行各个用户数据的混合：
+    # -------- step 4 进行各个用户数据的混合：(mix all data) --------
     mix_path='Data/Mix'
     path_check(mix_path)
     file_save=open(mix_path+'/Mix_all_loss.csv','wt')

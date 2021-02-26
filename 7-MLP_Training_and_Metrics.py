@@ -27,7 +27,7 @@ def train(files_train,labels_train,model_path,files_test,label_test,predict_save
     y_train=np.loadtxt(labels_train,delimiter=',')
     # y_train=np.reshape(y_train,(-1,40,1))
 
-    # 设定 fetureMap 维度
+    # --------- model structure -----------
     main_input=Input(shape=(3,),dtype='float32',name='MainInput')
     layer=Dense(10)(main_input)
     # layer=BatchNormalization()(layer)
@@ -42,7 +42,6 @@ def train(files_train,labels_train,model_path,files_test,label_test,predict_save
     model=Model(inputs=main_input,outputs=output)
     model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['binary_accuracy'])
 
-    # ----------------- use loss layers to replace loss='mse' in model.compile
     tensorboard_path='./'
     tbCallback=TensorBoard(log_dir=tensorboard_path,histogram_freq=0,write_graph=True,write_grads=True,write_images=True,embeddings_freq=0,embeddings_layer_names=None,embeddings_metadata=None)
     checkpoint=ModelCheckpoint(model_path,monitor='loss',verbose=0,save_best_only='True')
@@ -158,17 +157,17 @@ if __name__ == "__main__":
     # ------ 训练MLP
     train(files_train,labels_train,model_path,files_test,label_test,predict_save)
     # -------------------------
-# ---------------对预测数据进行标签化---------------
+# ---------------对预测数据进行标签化 (add label for data)---------------
     predicts=np.loadtxt(predict_save,delimiter=',')
     pred=np.where(predicts>0.5,1,0)
     np.savetxt(predict_label,pred,delimiter=',',fmt='%d')
     # -------------------- end -----------------
-    # -------------- 对结果进行统计：DRA ACC ...---------
+    # -------------- 对结果进行统计 ( metrics)：DRA ACC ...---------
     all_label=Count_nor_ano(label_test)
     pred=Calculatte(predict_label,label_test)
     print (pred/all_label)
     # -------------------- end --------------------
-    # -------- ROC 曲线 --------------------
+    # -------- ROC curve --------------------
     file_open=open(label_test,'r')
     file_open_two=open(predict_save,'r')
     y_true=[]
@@ -211,7 +210,7 @@ if __name__ == "__main__":
     # plt.show()
     plt.savefig(working_folder+'ROC.jpg')
     # -------------------------- end -----------------------------------
-# ------------- 三维散点图 ----------------
+# ------------- 三维散点图 (scatter diagram) ----------------
     figure_ponit()
     
 
