@@ -1,9 +1,10 @@
 # User-and-Entity-Behavior-Analytics-UEBA
-User and Entity Behavior Analytics by deep learning  
+User and Entity Behavior Analytics by deep learning.  
 Detecting users anomalous behaviors from users' daily records. 
+
 内部威胁检测
 ## Details
-All data were extracted from **CERT/R4.2**  &nbsp; &nbsp;(*ftp://ftp.sei.cmu.edu/pub/cert-data*)
+All data were extracted from **CERT/R4.2** &nbsp;(*ftp://ftp.sei.cmu.edu/pub/cert-data*)
 
 **Data**: data for detection.  
 
@@ -18,7 +19,7 @@ All data were extracted from **CERT/R4.2**  &nbsp; &nbsp;(*ftp://ftp.sei.cmu.edu
 - Run python files step by step.
 - Note that **3-Action_Sequence_Training.py** and **4-Static_Feature_Training.py** need to be run for different users separately, you can find the user_sets and change it.
 
-(The provided features and deep learning models in this project are very simple samples, and you can add or create your own features and models based on this project.)
+*The provided features and deep learning models in this project are very simple samples, and you can add or create your own features and models based on this project.* : )
 
 ## Cite this work
 This project is a part of our work that has been published in the ACM/IMS Transactions on Data Science. You can cite this work in your researches. 
