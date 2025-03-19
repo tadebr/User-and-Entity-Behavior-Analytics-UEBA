@@ -1,5 +1,5 @@
 from keras.models import Sequential,load_model,Model
-from keras.layers import Dense, Activation,Embedding,Conv2D,MaxPooling2D,Reshape,BatchNormalization,Dropout,Input,concatenate,GlobalAveragePooling2D,Flatten,ConvLSTM2D,ConvLSTM2DCell,LSTM,Conv3D
+#from keras.layers import Dense, Activation,Embedding,Conv2D,MaxPooling2D,Reshape,BatchNormalization,Dropout,Input,concatenate,GlobalAveragePooling2D,Flatten,ConvLSTM2D,ConvLSTM2DCell,LSTM,Conv3D
 from keras.optimizers import adam
 import numpy as np 
 import linecache
@@ -8,6 +8,10 @@ import os
 from keras import losses,metrics
 from keras.callbacks import TensorBoard, ModelCheckpoint
 import matplotlib.pyplot as plt
+from keras.layers import Dense, Activation, Embedding, Conv2D, MaxPooling2D, Reshape, 
+                         BatchNormalization, Dropout, Input, concatenate, 
+                         GlobalAveragePooling2D, Flatten, ConvLSTM2D, LSTM, Conv3D
+
 
 
 
